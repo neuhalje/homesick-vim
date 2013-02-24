@@ -1,0 +1,111 @@
+" VIM Konfigurationsdatei
+"
+" xvim: ff=unix enc=utf8 :
+" Unter Windows in %USERPROFILE%
+"
+" Verwenden wie folgt:
+"  In der "normalen" vimrc einfach
+" source ~/.vim/vim.jn/vimrc
+" einbauen. Fertig.
+"
+"
+"
+" $HeadURL: http://repository.local.neuhalfen.name/svn/jens/computersettings/byProgram/vim/vimrc $
+" $LastChangedBy: jens $
+" $Revision: 199 $
+"
+
+" Die deutschen Menues sind für viele
+" Plugins nicht der hit :-(
+lang C
+
+" https://github.com/tpope/vim-pathogen
+call pathogen#infect()
+
+set paste
+
+" 256 colors
+" Color Scheme ----------------------------------------------------------- {{{
+
+" Set the color scheme.
+try
+    set background=dark
+    colorscheme solarized
+catch /E185:/
+    colorscheme default
+endtry
+
+" }}}
+
+" Solarized -------------------------------------------------------------- {{{
+
+ if exists('g:colors_name') && g:colors_name == 'solarized'
+    " Text is unreadable with background transparency.
+    if has('gui_macvim') 
+        set transparency=0
+    endif
+
+    " Highlighted text is unreadable in Terminal.app because it
+    " does not support setting of the cursor foreground color.
+    if !has('gui_running') && ($TERM_PROGRAM == 'Apple_Terminal' || $TERM == 'xterm-256color' || $TERM == 'xterm-color' || $TERM == 'xterm')
+        let g:solarized_termcolors = &t_Co
+        let g:solarized_termtrans = 1
+        colorscheme solarized
+    endif
+
+    call togglebg#map("<F2>")
+endif
+
+" }}}
+
+syntax on
+set tabpagemax=50
+
+filetype plugin indent on
+
+set ignorecase
+
+" Trailing Whitespaces als "~" darstellen.
+" see here: http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+set list listchars=trail:~
+
+
+" Die Kommandozeile kommt mit dem Sonderzeichen nicht klar
+if has("gui_running")
+   " Tabs als »··
+   " borks under Linux gtkvim
+      "set list listchars+=tab:»
+endif
+
+" MAC-OS spezifische Einstellungen
+source  <sfile>:h/include/macos.vimrc
+
+" Unterstuetzung fuer LaTeX
+source  <sfile>:h/include/latexsuite.vimrc
+
+" Statuszeile
+source  <sfile>:h/include/statusline.vimrc
+
+" Diverses
+source  <sfile>:h/include/misc.vimrc
+
+" Rechtschreibkorrektur
+source  <sfile>:h/include/spelling.vimrc
+
+" git syntax
+autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
+
+source  <sfile>:h/include/tabtooltip.vimrc
+
+source  <sfile>:h/include/fuzzyfind.vimrc
+
+source  <sfile>:h/include/haskell.vimrc
+
+source  <sfile>:h/include/project.vimrc
+
+
+highlight CursorLine  cterm=NONE ctermbg=black guibg=black
+
+" http://unix.stackexchange.com/questions/19875/setting-vim-filetype-with-modeline-not-working-as-expected
+set modeline
+set modelines=2
