@@ -9,3 +9,7 @@ This is a [homesick](https://github.com/technicalpickles/homesick) _castle_ for 
 * Under MacOS (GUI): Map Apple-7 to backslash .. makes typing less error prone
 * Other goodies [...]
 
+Pathogen / Plugins
+------------------
+Plugins should be installed into ```.vim/bundle``` where [pathogen](http://www.vim.org/scripts/script.php?script_id=2332)  picks them up.
+
