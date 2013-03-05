@@ -109,3 +109,6 @@ highlight CursorLine  cterm=NONE ctermbg=black guibg=black
 " http://unix.stackexchange.com/questions/19875/setting-vim-filetype-with-modeline-not-working-as-expected
 set modeline
 set modelines=2
+
+" https://powerline.readthedocs.org/en/latest/overview.html
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
