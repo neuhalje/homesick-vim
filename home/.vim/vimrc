@@ -8,12 +8,6 @@
 " source ~/.vim/vim.jn/vimrc
 " einbauen. Fertig.
 "
-"
-"
-" $HeadURL: http://repository.local.neuhalfen.name/svn/jens/computersettings/byProgram/vim/vimrc $
-" $LastChangedBy: jens $
-" $Revision: 199 $
-"
 
 " Die deutschen Menues sind für viele
 " Plugins nicht der hit :-(
@@ -39,9 +33,9 @@ endtry
 
 " Solarized -------------------------------------------------------------- {{{
 
- if exists('g:colors_name') && g:colors_name == 'solarized'
+if exists('g:colors_name') && g:colors_name == 'solarized'
     " Text is unreadable with background transparency.
-    if has('gui_macvim') 
+    if has('gui_macvim')
         set transparency=0
     endif
 
@@ -113,5 +107,3 @@ highlight CursorLine  cterm=NONE ctermbg=black guibg=black
 set modeline
 set modelines=2
 
-" https://powerline.readthedocs.org/en/latest/overview.html
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
