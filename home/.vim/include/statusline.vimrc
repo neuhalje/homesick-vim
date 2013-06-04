@@ -16,5 +16,7 @@ else
     set statusline=%F%m%r%h%w\ [FORMAT=\%{&fileformat}]\ [ENCODING=%{&encoding}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [POS=%4l,%3v]\ [LEN=%L]
 endif
 
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
+
 " Always show the statusline
 set laststatus=2
