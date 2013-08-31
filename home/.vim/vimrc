@@ -55,6 +55,9 @@ endif
 syntax on
 set tabpagemax=50
 
+" tabs as spaces
+set expandtab
+
 filetype plugin indent on
 
 set ignorecase
