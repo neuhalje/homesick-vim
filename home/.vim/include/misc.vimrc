@@ -46,3 +46,7 @@ inoremap <Nul> <C-x><C-o>
 " for GUI
 inoremap <C-space> <C-x><C-o>
 
+" Save files as sudo with w!!
+if has("unix")
+   command! -bar -nargs=0 SudoW :silent exe "write !sudo tee % >/dev/null" | silent edit!
+endif
