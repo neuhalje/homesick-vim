@@ -65,6 +65,7 @@ set ignorecase
 " Trailing Whitespaces als "~" darstellen.
 " see here: http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 set list listchars=trail:~
+set nolist
 
 
 " Die Kommandozeile kommt mit dem Sonderzeichen nicht klar
