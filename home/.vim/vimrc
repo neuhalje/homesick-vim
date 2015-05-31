@@ -111,3 +111,5 @@ highlight CursorLine  cterm=NONE ctermbg=black guibg=black
 set modeline
 set modelines=2
 
+" https://github.com/majutsushi/tagbar
+nmap <F8> :TagbarToggle<CR>
