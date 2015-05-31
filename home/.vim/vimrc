@@ -88,6 +88,9 @@ source  <sfile>:h/include/misc.vimrc
 " Rechtschreibkorrektur
 source  <sfile>:h/include/spelling.vimrc
 
+" golang
+source  <sfile>:h/include/golang.vimrc
+
 " git syntax
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 
