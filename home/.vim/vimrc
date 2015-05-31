@@ -81,9 +81,6 @@ source  <sfile>:h/include/macos.vimrc
 " Mutt
 source  <sfile>:h/include/mutt.vimrc
 
-" Unterstuetzung fuer LaTeX
-source  <sfile>:h/include/latexsuite.vimrc
-
 " Statuszeile
 source  <sfile>:h/include/statusline.vimrc
 
