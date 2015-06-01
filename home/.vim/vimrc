@@ -111,3 +111,4 @@ set modelines=2
 
 " https://github.com/majutsushi/tagbar
 nmap <F8> :TagbarToggle<CR>
+nmap <F9> :NERDTreeToggle<CR>
