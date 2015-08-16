@@ -1,5 +1,5 @@
 " VIM Konfigurationsdatei
-" vim: fileformat=unix encoding=utf8 filetype=vim foldmethod=marker :
+" vim: fileformat=unix  filetype=vim foldmethod=marker :
 
 
 " Color Scheme ----------------------------------------------------------- {{{1
@@ -88,12 +88,6 @@ source  <sfile>:h/include/golang.vimrc
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 
 source  <sfile>:h/include/tabtooltip.vimrc
-
-" source  <sfile>:h/include/fuzzyfind.vimrc
-
-" source  <sfile>:h/include/haskell.vimrc
-
-" source  <sfile>:h/include/project.vimrc
 
 " Modeline {{{1
 
