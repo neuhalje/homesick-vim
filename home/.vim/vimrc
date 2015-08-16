@@ -1,25 +1,8 @@
 " VIM Konfigurationsdatei
-"
-" vim: fileformat=unix encoding=utf8 filetype=vim :
-" Unter Windows in %USERPROFILE%
-"
-" Verwenden wie folgt:
-"  In der "normalen" vimrc einfach
-" source ~/.vim/vim.jn/vimrc
-" einbauen. Fertig.
-"
+" vim: fileformat=unix encoding=utf8 filetype=vim foldmethod=marker :
 
-" Die deutschen Menues sind für viele
-" Plugins nicht der hit :-(
-lang C
 
-" https://github.com/tpope/vim-pathogen
-call pathogen#infect()
-
-set paste
-
-" 256 colors
-" Color Scheme ----------------------------------------------------------- {{{
+" Color Scheme ----------------------------------------------------------- {{{1
 
 " Set the color scheme.
 try
@@ -29,9 +12,8 @@ catch /E185:/
     colorscheme default
 endtry
 
-" }}}
 
-" Solarized -------------------------------------------------------------- {{{
+" Solarized -------------------------------------------------------------- {{{2
 
 if exists('g:colors_name') && g:colors_name == 'solarized'
     " Text is unreadable with background transparency.
@@ -48,7 +30,16 @@ if exists('g:colors_name') && g:colors_name == 'solarized'
     endif
 endif
 
-" }}}
+highlight CursorLine  cterm=NONE ctermbg=black guibg=black
+
+" Misc {{{1
+
+lang C
+
+" https://github.com/tpope/vim-pathogen
+call pathogen#infect()
+
+set paste
 
 syntax on
 set tabpagemax=50
@@ -72,6 +63,8 @@ if has("gui_running")
    " borks under Linux gtkvim
       "set list listchars+=tab:»
 endif
+
+" Includes {{{1
 
 " MAC-OS spezifische Einstellungen
 source  <sfile>:h/include/macos.vimrc
@@ -102,13 +95,13 @@ source  <sfile>:h/include/tabtooltip.vimrc
 
 " source  <sfile>:h/include/project.vimrc
 
-
-highlight CursorLine  cterm=NONE ctermbg=black guibg=black
+" Modeline {{{1
 
 " http://unix.stackexchange.com/questions/19875/setting-vim-filetype-with-modeline-not-working-as-expected
 set modeline
 set modelines=2
 
+" Tagbar/NERDTree {{{1
 " https://github.com/majutsushi/tagbar
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :NERDTreeToggle<CR>
