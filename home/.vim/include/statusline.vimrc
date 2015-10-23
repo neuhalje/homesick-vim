@@ -1,4 +1,4 @@
-" vim: set encoding=utf-8 filetype=VIM :
+" vim: fileformat=unix  filetype=vim foldmethod=marker :
 "
 " Setup the statusline. Sourced by .vimrc
 "
@@ -17,7 +17,7 @@ else
 endif
 
 "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
-set guifont=Droid\ Sans\ Mono\ 10
+" already handled fr mac. set guifont=Droid\ Sans\ Mono\ 10
 
 " Always show the statusline
 set laststatus=2

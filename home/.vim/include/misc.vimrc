@@ -10,7 +10,7 @@
 filetype indent on
 
 
-if has("gui_running") 
+if has("gui_running")
 	" antialias	use smooth, antialiased fonts
 	set antialias
 endif
@@ -48,5 +48,5 @@ inoremap <C-space> <C-x><C-o>
 
 " Save files as sudo with w!!
 if has("unix")
-   command! -bar -nargs=0 SudoW :silent exe "write !sudo tee % >/dev/null" | silent edit!
+   command! -bar -nargs=0 SudoW :silent exe "write !sudo tee % >/dev/null" | silent w!
 endif

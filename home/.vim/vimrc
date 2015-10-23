@@ -2,35 +2,6 @@
 " vim: fileformat=unix  filetype=vim foldmethod=marker :
 
 
-" Color Scheme ----------------------------------------------------------- {{{1
-
-" Set the color scheme.
-try
-    set background=dark
-    colorscheme solarized
-catch /E185:/
-    colorscheme default
-endtry
-
-
-" Solarized -------------------------------------------------------------- {{{2
-
-if exists('g:colors_name') && g:colors_name == 'solarized'
-    " Text is unreadable with background transparency.
-    if has('gui_macvim')
-        set transparency=0
-    endif
-
-    " Highlighted text is unreadable in Terminal.app because it
-    " does not support setting of the cursor foreground color.
-    if !has('gui_running') && ($TERM_PROGRAM == 'Apple_Terminal' || $TERM == 'xterm-256color' || $TERM == 'xterm-color' || $TERM == 'xterm')
-        let g:solarized_termcolors = &t_Co
-        let g:solarized_termtrans = 1
-        colorscheme solarized
-    endif
-endif
-
-highlight CursorLine  cterm=NONE ctermbg=black guibg=black
 
 " Misc {{{1
 
@@ -61,7 +32,7 @@ set nolist
 if has("gui_running")
    " Tabs als »··
    " borks under Linux gtkvim
-      "set list listchars+=tab:»
+   set list listchars+=tab:»
 endif
 
 " Includes {{{1
@@ -70,7 +41,7 @@ endif
 source  <sfile>:h/include/macos.vimrc
 
 " Mutt
-source  <sfile>:h/include/mutt.vimrc
+" source  <sfile>:h/include/mutt.vimrc
 
 " Statuszeile
 source  <sfile>:h/include/statusline.vimrc
@@ -99,3 +70,33 @@ set modelines=2
 " https://github.com/majutsushi/tagbar
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :NERDTreeToggle<CR>
+
+" Color Scheme ----------------------------------------------------------- {{{1
+
+" Set the color scheme.
+try
+    colorscheme solarized
+    set background=dark
+catch /E185:/
+    colorscheme desert256
+endtry
+
+
+" Solarized -------------------------------------------------------------- {{{2
+
+if exists('g:colors_name') && g:colors_name == 'solarized'
+    " Text is unreadable with background transparency.
+    if has('gui_macvim')
+        set transparency=0
+    endif
+
+    " Highlighted text is unreadable in Terminal.app because it
+    " does not support setting of the cursor foreground color.
+    if !has('gui_running') && ($TERM_PROGRAM == 'Apple_Terminal' || $TERM == 'xterm-256color' || $TERM == 'xterm-color' || $TERM == 'xterm')
+        let g:solarized_termcolors = &t_Co
+        let g:solarized_termtrans = 1
+        colorscheme solarized
+    endif
+endif
+
+highlight CursorLine  cterm=NONE ctermbg=black guibg=black
