@@ -1,12 +1,16 @@
 " VIM Konfigurationsdatei
 " vim: fileformat=unix  filetype=vim foldmethod=marker :
 
-
-
 " Misc {{{1
 
+set nocp
 lang C
 
+" Configure python before loading any plugins
+"source  <sfile>:h/include/python.vimrc
+
+" Powerline
+source  <sfile>:h/include/powerline.vimrc
 " https://github.com/tpope/vim-pathogen
 call pathogen#infect()
 
@@ -40,6 +44,7 @@ endif
 " MAC-OS spezifische Einstellungen
 source  <sfile>:h/include/macos.vimrc
 
+
 " Mutt
 " source  <sfile>:h/include/mutt.vimrc
 
@@ -53,12 +58,15 @@ source  <sfile>:h/include/misc.vimrc
 source  <sfile>:h/include/spelling.vimrc
 
 " golang
-source  <sfile>:h/include/golang.vimrc
+"source  <sfile>:h/include/golang.vimrc
 
 " git syntax
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 
 source  <sfile>:h/include/tabtooltip.vimrc
+
+" fzf  - fuzzy finder
+set rtp+=/usr/local/opt/fzf
 
 " Modeline {{{1
 
@@ -99,4 +107,5 @@ if exists('g:colors_name') && g:colors_name == 'solarized'
     endif
 endif
 
-highlight CursorLine  cterm=NONE ctermbg=black guibg=black
+"highlight CursorLine  cterm=NONE ctermbg=black guibg=black
+highlight CursorLine ctermbg=187 guibg=Grey90
