@@ -42,7 +42,7 @@ endif
 " Includes {{{1
 
 " MAC-OS spezifische Einstellungen
-source  <sfile>:h/include/macos.vimrc
+"source  <sfile>:h/include/macos.vimrc
 
 
 " Mutt
@@ -66,7 +66,7 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 source  <sfile>:h/include/tabtooltip.vimrc
 
 " fzf  - fuzzy finder
-set rtp+=/usr/local/opt/fzf
+"set rtp+=/usr/local/opt/fzf
 
 " Modeline {{{1
 
@@ -87,6 +87,7 @@ try
     set background=dark
 catch /E185:/
     colorscheme desert256
+    set background=dark
 endtry
 
 
